@@ -1,3 +1,9 @@
+!gclone.exe
+!libeay32.dll
+!libmySQL50.dll
+!mysql.exe
+!mysqldump.exe
+!ssleay32.dll
 rclone.conf
 version.txt
 TODO/
