@@ -1,0 +1,251 @@
+object frmKoneksi: TfrmKoneksi
+  Left = 449
+  Height = 249
+  Top = 226
+  Width = 265
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsToolWindow
+  ClientHeight = 249
+  ClientWidth = 265
+  Color = 15461869
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '3.8.0.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 265
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'KONEKSI DATABASE'
+    Color = clGreen
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object edHost: TEdit
+    Left = 96
+    Height = 24
+    Top = 49
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+    OnKeyPress = edHostKeyPress
+  end
+  object Label1: TLabel
+    Left = 9
+    Height = 16
+    Top = 49
+    Width = 57
+    Caption = 'Hostname'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edUser: TEdit
+    Left = 96
+    Height = 24
+    Top = 81
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+    OnKeyPress = edUserKeyPress
+  end
+  object Label2: TLabel
+    Left = 9
+    Height = 16
+    Top = 81
+    Width = 58
+    Caption = 'Username'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edPass: TEdit
+    Left = 96
+    Height = 24
+    Top = 113
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 3
+    OnKeyPress = edPassKeyPress
+  end
+  object Label3: TLabel
+    Left = 9
+    Height = 16
+    Top = 113
+    Width = 55
+    Caption = 'Password'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object btSimpan: TSpeedButton
+    Cursor = crHandPoint
+    Left = 156
+    Height = 30
+    Top = 209
+    Width = 100
+    BorderSpacing.Left = 1
+    BorderSpacing.Top = 1
+    BorderSpacing.Right = 1
+    BorderSpacing.Bottom = 1
+    BorderSpacing.Around = 1
+    BorderSpacing.InnerBorder = 1
+    BorderSpacing.CellAlignHorizontal = ccaCenter
+    BorderSpacing.CellAlignVertical = ccaCenter
+    Caption = 'Simpan [F8]'
+    Color = 14150399
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000064000000640000000000000000000000000000670000
+      00F1000000A80000009F0000009F0000009F0000009F0000009F0000009F0000
+      009F0000009F0000009F0000009F000000A8000000F100000067000000F30000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000F3000000FF0000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000FF000000FF0000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000FF000000FF0000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000FF000000FF0000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000FF000000FF0000
+      00DF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000DF000000FF000000FF0000
+      00EA0000000A0000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000A000000EA000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000EC000000DF000000DF000000DF000000DF000000DF0000
+      00DF000000DF000000E0000000FE000000FF000000FF000000FF000000FF0000
+      00FF000000FF0000002000000000000000000000000000000000000000000000
+      00700000008F0000000D000000BE000000FF000000FF000000FF000000FF0000
+      00FF000000FF0000001700000000000000000000000000000000000000000000
+      00C7000000FF00000017000000B7000000FF000000FF000000FF000000FF0000
+      00FF000000FF0000001700000000000000000000000000000000000000000000
+      00C7000000FF00000017000000B7000000FF000000FF000000F9000000FF0000
+      00FF000000FF0000001700000000000000000000000000000000000000000000
+      00C7000000FF00000017000000B7000000FF000000FF00000080000000F30000
+      00FF000000FF0000001800000000000000000000000000000000000000000000
+      009B000000C700000012000000B7000000FF0000009700000000000000670000
+      00F3000000FF000000BC0000009F0000009F0000009F0000009F0000009F0000
+      009F0000009F000000A2000000EF000000800000000000000000
+    }
+    OnClick = btSimpanClick
+    ParentBidiMode = False
+    ParentFont = False
+    ParentShowHint = False
+  end
+  object Label4: TLabel
+    Left = 9
+    Height = 16
+    Top = 145
+    Width = 23
+    Caption = 'Port'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edPort: TEdit
+    Left = 96
+    Height = 24
+    Top = 145
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    NumbersOnly = True
+    ParentFont = False
+    TabOrder = 4
+    OnKeyPress = edPassKeyPress
+  end
+  object Label5: TLabel
+    Left = 9
+    Height = 16
+    Top = 177
+    Width = 53
+    Caption = 'Database'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edData: TEdit
+    Left = 96
+    Height = 24
+    Top = 177
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 5
+    OnKeyPress = cbDataKeyPress
+  end
+end

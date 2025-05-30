@@ -1,0 +1,129 @@
+object frmDownload: TfrmDownload
+  Left = 378
+  Height = 201
+  Top = 201
+  Width = 417
+  BorderStyle = bsToolWindow
+  ClientHeight = 201
+  ClientWidth = 417
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '3.8.0.0'
+  object pb: TProgressBar
+    Left = 9
+    Height = 20
+    Top = 144
+    Width = 399
+    TabOrder = 0
+  end
+  object lbFileData: TLabel
+    Left = 97
+    Height = 15
+    Top = 49
+    Width = 311
+    AutoSize = False
+    Caption = ':'
+    ParentColor = False
+  end
+  object lbSpeedData: TLabel
+    Left = 97
+    Height = 15
+    Top = 73
+    Width = 311
+    AutoSize = False
+    Caption = ': Calculating. Please wait...'
+    ParentColor = False
+  end
+  object lbRemainingData: TLabel
+    Left = 97
+    Height = 15
+    Top = 121
+    Width = 311
+    AutoSize = False
+    Caption = ':'
+    ParentColor = False
+  end
+  object lbElapsedData: TLabel
+    Left = 97
+    Height = 15
+    Top = 100
+    Width = 311
+    AutoSize = False
+    Caption = ':'
+    ParentColor = False
+  end
+  object lbFile: TLabel
+    Left = 9
+    Height = 15
+    Top = 49
+    Width = 18
+    Caption = 'File'
+    ParentColor = False
+  end
+  object lbSpeed: TLabel
+    Left = 9
+    Height = 15
+    Top = 73
+    Width = 32
+    Caption = 'Speed'
+    ParentColor = False
+  end
+  object lbElapsed: TLabel
+    Left = 9
+    Height = 15
+    Top = 97
+    Width = 40
+    Caption = 'Elapsed'
+    ParentColor = False
+  end
+  object lbRemaining: TLabel
+    Left = 9
+    Height = 15
+    Top = 121
+    Width = 57
+    Caption = 'Remaining'
+    ParentColor = False
+  end
+  object lbReceived: TLabel
+    AnchorSideTop.Control = lbRemaining
+    Left = 97
+    Height = 15
+    Top = 171
+    Width = 3
+    BorderSpacing.Top = 50
+    Caption = ':'
+    ParentColor = False
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 417
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'DOWNLOAD FILE'
+    Color = clGreen
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object lbReceived1: TLabel
+    AnchorSideTop.Control = lbRemaining
+    Left = 9
+    Height = 15
+    Top = 171
+    Width = 47
+    BorderSpacing.Top = 50
+    Caption = 'Received'
+    ParentColor = False
+  end
+end

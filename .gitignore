@@ -1,0 +1,65 @@
+rclone.conf
+version.txt
+TODO/
+
+# Lazarus-generated binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.ppu
+*.compiled
+*.or
+*.rsj
+*.rst
+*.s
+*.map
+*.a
+*.pdb
+*.log
+
+# Lazarus backup & temporary files
+*.bak
+*.~*
+*.tds
+*.dbg
+*.lps
+*.opt
+*.local
+
+# Lazarus unit output
+lib/
+backup/
+tmp/
+build/
+
+# Lazarus project config files (optional: bisa dibagikan kalau semua pakai IDE sama)
+*.lps
+*.compiled
+*.lpi.bak
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.~*
+
+# If using versioned output folders
+*.compiled
+*.exe~
+
+# If you use package output directories
+*.bpl
+*.dcp
+*.dcu
+*.ppu
+*.o
+
+# FPCUnit test output
+testoutput/
+
+# Windows-specific
+*.ini
+*.rc

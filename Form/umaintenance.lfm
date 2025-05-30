@@ -1,0 +1,327 @@
+object frmMaintenance: TfrmMaintenance
+  Left = 481
+  Height = 500
+  Top = 133
+  Width = 417
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsToolWindow
+  Caption = 'Maintenance database'
+  ClientHeight = 500
+  ClientWidth = 417
+  Color = 15461869
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  LCLVersion = '3.8.0.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 40
+    Top = 0
+    Width = 417
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'MAINTENANCE DATABASE'
+    Color = clGreen
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -13
+    Font.Name = 'Trebuchet MS'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object sg: TStringGrid
+    Left = 8
+    Height = 265
+    Top = 79
+    Width = 150
+    ColCount = 2
+    Columns = <    
+      item
+        ButtonStyle = cbsCheckboxColumn
+        Title.Caption = ''
+        Width = 20
+      end    
+      item
+        ButtonStyle = cbsNone
+        Title.Caption = 'Columns'
+        Width = 109
+      end>
+    DefaultRowHeight = 20
+    FixedCols = 0
+    FixedRows = 0
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -12
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Options = [goFixedVertLine, goFixedHorzLine, goEditing, goRowSelect, goSmoothScroll]
+    ParentFont = False
+    ParentShowHint = False
+    ScrollBars = ssVertical
+    ShowHint = True
+    TabOrder = 1
+    OnClick = sgClick
+    OnGetCheckboxState = sgGetCheckboxState
+    OnKeyDown = FormKeyDown
+    OnSetCheckboxState = sgSetCheckboxState
+  end
+  object GroupBox1: TGroupBox
+    Left = 170
+    Height = 61
+    Top = 44
+    Width = 238
+    ClientHeight = 41
+    ClientWidth = 234
+    ParentBackground = False
+    TabOrder = 2
+    object btOptimize: TSpeedButton
+      Cursor = crHandPoint
+      Left = 8
+      Height = 32
+      Top = 0
+      Width = 100
+      BorderSpacing.Left = 1
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 1
+      BorderSpacing.Bottom = 1
+      BorderSpacing.Around = 1
+      BorderSpacing.InnerBorder = 1
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'Optimize'
+      Color = 9093631
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btOptimizeClick
+      ParentBidiMode = False
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object chOLocal: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 7
+      Width = 46
+      Caption = 'Local'
+      TabOrder = 0
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 170
+    Height = 61
+    Top = 104
+    Width = 238
+    ClientHeight = 41
+    ClientWidth = 234
+    ParentBackground = False
+    TabOrder = 3
+    object btCheck: TSpeedButton
+      Cursor = crHandPoint
+      Left = 8
+      Height = 32
+      Top = 0
+      Width = 100
+      BorderSpacing.Left = 1
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 1
+      BorderSpacing.Bottom = 1
+      BorderSpacing.Around = 1
+      BorderSpacing.InnerBorder = 1
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'Check'
+      Color = 9093631
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btCheckClick
+      ParentBidiMode = False
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object cbMethod: TComboBox
+      Left = 114
+      Height = 23
+      Top = 5
+      Width = 111
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'None'
+        'Quick'
+        'Fast'
+        'Medium'
+        'Extended'
+        'Changed'
+      )
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'None'
+      OnKeyDown = FormKeyDown
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 170
+    Height = 61
+    Top = 164
+    Width = 238
+    ClientHeight = 41
+    ClientWidth = 234
+    ParentBackground = False
+    TabOrder = 4
+    object btAnalyze: TSpeedButton
+      Cursor = crHandPoint
+      Left = 8
+      Height = 32
+      Top = 0
+      Width = 100
+      BorderSpacing.Left = 1
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 1
+      BorderSpacing.Bottom = 1
+      BorderSpacing.Around = 1
+      BorderSpacing.InnerBorder = 1
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'Analyze'
+      Color = 9093631
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btAnalyzeClick
+      ParentBidiMode = False
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object chALocal: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 7
+      Width = 46
+      Caption = 'Local'
+      TabOrder = 0
+    end
+  end
+  object GroupBox4: TGroupBox
+    Left = 170
+    Height = 120
+    Top = 224
+    Width = 238
+    ClientHeight = 100
+    ClientWidth = 234
+    ParentBackground = False
+    TabOrder = 5
+    object btRepair: TSpeedButton
+      Cursor = crHandPoint
+      Left = 8
+      Height = 32
+      Top = 0
+      Width = 100
+      BorderSpacing.Left = 1
+      BorderSpacing.Top = 1
+      BorderSpacing.Right = 1
+      BorderSpacing.Bottom = 1
+      BorderSpacing.Around = 1
+      BorderSpacing.InnerBorder = 1
+      BorderSpacing.CellAlignHorizontal = ccaCenter
+      BorderSpacing.CellAlignVertical = ccaCenter
+      Caption = 'Repair'
+      Color = 9093631
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      OnClick = btRepairClick
+      ParentBidiMode = False
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object chQuick: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 0
+      Width = 49
+      Caption = 'Quick'
+      TabOrder = 0
+    end
+    object chUsefrm: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 24
+      Width = 63
+      Caption = 'Use_Frm'
+      TabOrder = 1
+    end
+    object chRLocal: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 48
+      Width = 46
+      Caption = 'Local'
+      TabOrder = 2
+    end
+    object chExtended: TCheckBox
+      Left = 114
+      Height = 19
+      Top = 72
+      Width = 66
+      Caption = 'Extended'
+      TabOrder = 3
+    end
+  end
+  object GroupBox5: TGroupBox
+    Left = 8
+    Height = 35
+    Top = 44
+    Width = 150
+    ClientHeight = 15
+    ClientWidth = 146
+    ParentBackground = False
+    TabOrder = 6
+    object chAll: TCheckBox
+      Left = 3
+      Height = 19
+      Top = -6
+      Width = 80
+      Caption = 'Pilih Semua'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+      OnChange = chAllChange
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 147
+    Top = 353
+    Width = 417
+    Align = alBottom
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Flat = True
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns, dgDisableDelete, dgDisableInsert, dgDisplayMemoText]
+    TabOrder = 7
+  end
+  object DataSource1: TDataSource
+    Left = 368
+    Top = 358
+  end
+end
