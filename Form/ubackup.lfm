@@ -1,11 +1,11 @@
 object frmBackup: TfrmBackup
   Left = 733
-  Height = 473
+  Height = 449
   Top = 159
   Width = 401
   BorderIcons = [biSystemMenu]
   BorderStyle = bsToolWindow
-  ClientHeight = 473
+  ClientHeight = 449
   ClientWidth = 401
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
@@ -15,7 +15,7 @@ object frmBackup: TfrmBackup
   object GroupBox1: TGroupBox
     Left = 9
     Height = 298
-    Top = 144
+    Top = 142
     Width = 382
     ClientHeight = 278
     ClientWidth = 378
@@ -345,14 +345,6 @@ object frmBackup: TfrmBackup
     ParentBidiMode = False
     ParentFont = False
     ParentShowHint = False
-  end
-  object Label5: TLabel
-    Left = 9
-    Height = 15
-    Top = 449
-    Width = 124
-    Caption = 'Aplikasi sedang ditutup'
-    ParentColor = False
   end
   object sd: TSaveDialog
     Filter = 'SQL File|*.sql'

@@ -109,7 +109,7 @@ begin
   CreateDir(GetAppConfigDir(False));
 
   AddScheduledTask;
-  AddAppToUninstall;
+  //AddAppToUninstall;
   ExtractAllResources;
   ConfigList:=TList.Create;BackupList:=TList.Create;KoneksiList:=TList.Create;
   RestoreList:=TList.Create;MaintenanceList:=TList.Create;HapusList:=TList.Create;
@@ -147,7 +147,7 @@ end;
 
 procedure TDM.DataModuleDestroy(Sender: TObject);
 begin
-  RemoveAppFromUninstall;
+  //RemoveAppFromUninstall;
 end;
 
 procedure TDM.miGDriveClick(Sender: TObject);

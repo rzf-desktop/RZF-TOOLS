@@ -30,7 +30,7 @@ object DM: TDM
       Caption = '-'
     end
     object miGDrive: TMenuItem
-      Caption = 'Google Drive'
+      Caption = 'Setting Google Drive'
       OnClick = miGDriveClick
     end
     object miDownload: TMenuItem

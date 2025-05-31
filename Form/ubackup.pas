@@ -30,7 +30,6 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Label5: TLabel;
     Panel1: TPanel;
     sd: TSaveDialog;
     teJam1: TTimeEdit;
@@ -133,6 +132,9 @@ begin
   IFile.WriteString('autobackup.jjam3',teJam3.Text);
   IFile.WriteBoolean('autobackup.tutup',chTutup.Checked);
   IFile.WriteBoolean('autobackup.gdrive',chGDrive.Checked);
+
+  if Sender=nil then exit;
+
   if (chGDrive.Checked) and (CekGCloneConfig=false) then
   begin
     try
@@ -213,10 +215,6 @@ begin
   if (IFile.ReadBoolean('autobackup.tutup',false)) then
   begin
     IsRunning:=IsAppARunning;
-
-    if IsRunning then
-    Label5.Caption:='Aplikasi sedang dibuka' else
-    Label5.Caption:='Aplikasi sedang ditutup';
 
     if AppWasRunning and not IsRunning then
     begin

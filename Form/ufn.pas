@@ -839,6 +839,7 @@ begin
     teJam3.Text:=IFile.ReadString('autobackup.jjam3','0:00');
     chTutup.Checked:=IFile.ReadBoolean('autobackup.tutup',true);
     chGDrive.Checked:=IFile.ReadBoolean('autobackup.gdrive',false);
+    btSimpanClick(nil);
 
     aIniFile:=TiniFile.Create(IFIle.ReadString('app.location','')+'\koneksi.ini');
     try
