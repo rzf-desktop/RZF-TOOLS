@@ -18,7 +18,6 @@ object DM: TDM
     Top = 8
     object miShow: TMenuItem
       Caption = 'Show/Hide'
-      ImageIndex = 3
       OnClick = pmClick
     end
     object Separator1: TMenuItem
@@ -32,19 +31,16 @@ object DM: TDM
     end
     object miGDrive: TMenuItem
       Caption = 'Google Drive'
-      ImageIndex = 1
       OnClick = miGDriveClick
     end
     object miDownload: TMenuItem
       Caption = 'Download'
-      ImageIndex = 0
     end
     object Separator4: TMenuItem
       Caption = '-'
     end
     object miExit: TMenuItem
       Caption = 'Exit'
-      ImageIndex = 2
       OnClick = pmClick
     end
   end

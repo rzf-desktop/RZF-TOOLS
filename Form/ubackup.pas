@@ -5,7 +5,7 @@ unit ubackup;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, jwatlhelp32,
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls, jwatlhelp32, ufn,
   ComCtrls, ExtCtrls, Buttons, EditBtn, IniPropStorage, Windows, DateUtils, IniFiles, StrUtils;
 
 type
@@ -81,6 +81,37 @@ begin
 end;
 
 procedure TfrmBackup.btSimpanClick(Sender: TObject);
+var
+  i : integer;
+  function CekGCloneConfig : boolean;
+  var
+    Ini: TIniFile;
+    FilePath: string;
+    Keys: TStringList;
+  begin
+    Result:=false;
+    FilePath:=GetAppConfigDir(False)+'rclone.conf';
+
+    if not FileExists(FilePath) then
+    begin
+      with TStringList.Create do
+      try
+        SaveToFile(FilePath);
+      finally
+        Free;
+      end;
+    end;
+
+    Ini:=TIniFile.Create(FilePath);
+    Keys:=TStringList.Create;
+    try
+      Ini.ReadSection('gdrive',Keys);
+      if Keys.Count<>0 then Result:=true;
+    finally
+      Keys.Free;
+      Ini.Free;
+    end;
+  end;
 begin
   if edDir.Text='' then
   begin
@@ -102,7 +133,14 @@ begin
   IFile.WriteString('autobackup.jjam3',teJam3.Text);
   IFile.WriteBoolean('autobackup.tutup',chTutup.Checked);
   IFile.WriteBoolean('autobackup.gdrive',chGDrive.Checked);
-
+  if (chGDrive.Checked) and (CekGCloneConfig=false) then
+  begin
+    try
+      GCloneConfig;
+    finally
+      Showmessage('Perubahan berhasil di simpan');
+    end;
+  end else
   Showmessage('Perubahan berhasil di simpan');
 end;
 

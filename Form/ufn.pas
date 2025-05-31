@@ -6,7 +6,7 @@ interface
 
 uses
   Windows, Classes, SysUtils, Registry, applist, Menus, TypInfo, RegExpr, ExtCtrls,
-  udownload, ubackup, ukoneksi, urestore, umaintenance, uhapus, IniPropStorage, Forms,
+  IniPropStorage, Forms, udownload,
   ShlObj, FileUtil, Dialogs, IniFiles, ZConnection, ZDataset, StrUtils, Controls,
   Process, Clipbrd, Graphics, ShellAPI, DateUtils;
 
@@ -77,7 +77,7 @@ function LoadHapus(aIFile : TIniPropStorage) : TForm;
 implementation
 
 uses
-  udm;
+  udm, ubackup, ukoneksi, urestore, umaintenance, uhapus;
 
 procedure ExtractAllResources;
 var
@@ -459,7 +459,7 @@ begin
   OutputLines := TStringList.Create;
   try
     AProcess.Executable := 'gclone';
-    AProcess.Parameters.Add('--config=rclone.conf');
+    AProcess.Parameters.Add('--config="'+GetAppConfigDir(False)+'rclone.conf"');
     AProcess.Parameters.Add('config');
     AProcess.Parameters.Add('create');
     AProcess.Parameters.Add('gdrive');
@@ -496,7 +496,8 @@ begin
           end;
         end;
       end;
-      if ((SecondsBetween(Now, StartTime) < 15) and (LinkExists=false)) or (SecondsBetween(Now, StartTime) < 60) then
+
+      if ((SecondsBetween(Now, StartTime) > 15) and (LinkExists=false)) or (SecondsBetween(Now, StartTime) > 60) then
       begin
         AProcess.Terminate(0);
         ShowMessage('Prosess timeout, silahkan coba lagi!');
@@ -837,7 +838,7 @@ begin
     chJam3.Checked:=IFile.ReadBoolean('autobackup.jam3',false);
     teJam3.Text:=IFile.ReadString('autobackup.jjam3','0:00');
     chTutup.Checked:=IFile.ReadBoolean('autobackup.tutup',true);
-    chGDrive.Checked:=IFile.ReadBoolean('autobackup.gdrive',true);
+    chGDrive.Checked:=IFile.ReadBoolean('autobackup.gdrive',false);
 
     aIniFile:=TiniFile.Create(IFIle.ReadString('app.location','')+'\koneksi.ini');
     try
